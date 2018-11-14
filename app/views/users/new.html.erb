@@ -1,0 +1,19 @@
+<div id="clearance" class="sign-up">
+  <div class="ui centered card offset-y-25">
+    <div class="card">
+      <div class="content pad-25">
+        <div class="header text-black"><h2>Sign Up</h2></div>
+        <div class="description m-top-25">
+        <%= form_for @user, :html => {:class => "ui form"} do |form| %>
+          <%= render partial: '/users/form', object: form %>
+        </div>
+      </div>
+      <div class="ui two bottom attached buttons">
+          <%= form.submit "Sign Up", class:"ui button" %>%>
+    
+          <%= link_to "Sign In", sign_in_path, class:"ui button" %>
+      </div>  
+    </div>
+  </div>
+  <% end %>
+</div>
