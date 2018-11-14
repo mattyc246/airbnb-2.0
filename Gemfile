@@ -38,8 +38,8 @@ gem "clearance"
 
 # Bootstrap Gem
 gem 'bootstrap', '~> 4.1.3'
-# Semantic UI Gem
-gem 'semantic-ui-sass'
+# materialize Gem
+gem 'materialize-sass', '~> 1.0.0'
 # JQuery gem
 gem 'jquery-rails'
 
