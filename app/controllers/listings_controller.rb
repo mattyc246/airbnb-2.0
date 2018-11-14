@@ -6,6 +6,8 @@ class ListingsController < ApplicationController
 
   def show
 
+    @listing = Listing.find(params[:id])
+
   end
 
   def new
@@ -15,6 +17,7 @@ class ListingsController < ApplicationController
   def create
 
     listing = Listing.new(listing_params)
+    listing.user = current_user
 
     if listing.save
 

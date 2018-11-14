@@ -11,12 +11,13 @@
  * It is generally better to create a new file per style scope.
  *
  */
- @import "semantic-ui";
+ @import "materialize";
+ @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
  body {
 
- 	background-color: black;
- 	color: white;
+ 	background-color: white;
+ 	color: black;
 
  }
 

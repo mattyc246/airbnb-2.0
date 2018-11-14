@@ -4,6 +4,12 @@ class ReservationsController < ApplicationController
 
   end
 
+  def index
+
+    @reservations = Reservation.find_by(user_id: current_user.id)
+
+  end
+
   def create
 
     reservation = Reservation.new(reservation_params)

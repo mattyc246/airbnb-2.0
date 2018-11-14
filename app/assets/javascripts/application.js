@@ -18,4 +18,9 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-//= require semantic-ui
+//= require materialize
+
+  $(document).on('turbolinks:load',function(){
+    $('select').formSelect();
+    $(".dropdown-trigger").dropdown();
+  });
