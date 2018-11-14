@@ -3624,3 +3624,14 @@ Processing by ListingsController#new as HTML
 Completed 200 OK in 124ms (Views: 119.2ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/listings/new" for 127.0.0.1 at 2018-11-14 18:09:37 +0800
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/matthewcross/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ListingsController#new as HTML
+  Rendering listings/new.html.erb within layouts/application
+  Rendered listings/new.html.erb within layouts/application (54.8ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "4c0cccae5a0e9a20e9eb6dcfec30d16d8d81fe89"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:9
+Completed 200 OK in 829ms (Views: 807.3ms | ActiveRecord: 10.1ms)
+
+
