@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Airbnb2</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div class="ui inverted segment">
+    <div class="ui inverted secondary pointing menu">
+      <div class="item">
+        <p>AnotherBnB</p>
+      </div>
+      <a class="active item">
+        Home
+      </a>
+      <a class="item">
+        Messages
+      </a>
+      <a class="item">
+        Friends
+      </a>
+      <div class="right menu">
+        <div class="ui inverted transparent icon input">
+          <input type="text" placeholder="Search...">
+          <button class="tiny ui inverted secondary button"><i class="search icon"></i>Search</button>
+        </div>
+        <a class="ui item">
+        <% if signed_in? -%>
+          <%= button_to t(".sign_out"), sign_out_path, method: :delete, class:"ui item" %>
+        <% else -%>
+          <%= link_to t(".sign_in"), sign_in_path, class:"ui item" %>
+        <% end -%>
+        </a>
+      </div>
+    </div>
+  </div>
+  
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <div id="flash">
+    <% flash.each do |key, value| -%>
+      <div id="flash_<%= key %>"><%=h value %></div>
+    <% end %>
+  </div>
 
-  <body>
-    <%= yield %>
-  </body>
+  <%= yield %>
+</body>
 </html>
